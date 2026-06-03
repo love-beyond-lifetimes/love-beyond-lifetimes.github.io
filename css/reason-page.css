@@ -1,0 +1,74 @@
+/* reason-page.css — shared style for reason1–4 */
+.reason-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+}
+
+.reason-panel {
+  width: min(680px, 94vw);
+  background: rgba(255,235,248,0.97);
+  text-align: center;
+}
+
+.reason-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rp-heart {
+  font-size: 28px;
+  color: var(--pink-hot);
+  animation: heartPulse 1.2s ease-in-out infinite;
+  text-shadow: 0 0 10px var(--pink-hot);
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.reason-title {
+  font-size: clamp(14px, 3vw, 24px);
+  color: var(--pink-deep);
+  text-shadow:
+    2px 2px 0 var(--white),
+    -1px -1px 0 rgba(224,57,123,0.3);
+  line-height: 1.4;
+}
+
+.reason-body {
+  font-size: clamp(13px, 2vw, 16px);
+  line-height: 1.9;
+  color: var(--dark);
+  margin-bottom: 28px;
+  padding: 0 8px;
+}
+
+.reason-body p {
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reason-body p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reason-next-area {
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.reason-next-area.visible {
+  opacity: 1;
+}

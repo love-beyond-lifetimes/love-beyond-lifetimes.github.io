@@ -1,0 +1,277 @@
+/* flowers.css */
+
+/* ---- Override background to second-bg for this page only ---- */
+.page-bg {
+  background-image: url('../assets/bg/second-bg.png') !important;
+}
+
+/* ---- Page layout ---- */
+.flowers-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 60px;
+  overflow: hidden;
+}
+
+/* ========================================================
+   CENTER FLOWER CARD — bigger box + bigger flower
+   ======================================================== */
+.flower-card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 215, 235, 0.88);
+  border: 3px solid var(--pink-hot);
+  border-radius: 28px;
+  box-shadow: 0 8px 40px rgba(255,107,157,0.22);
+  padding: 50px 48px 42px;
+  width: clamp(320px, 36vw, 480px);
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+}
+
+.flower-img {
+  width: clamp(240px, 30vw, 400px);
+  height: auto;
+  filter: drop-shadow(0 8px 16px rgba(255,107,157,0.28));
+  animation: flowerFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+
+.flower-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+  color: var(--pink-hot);
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* ========================================================
+   FLOATING NOTE PILLS
+   ======================================================== */
+.note-pill {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255,255,255,0.93);
+  border: 2px solid var(--pink-hot);
+  border-radius: 50px;
+  padding: 16px 28px;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(12px, 1.15vw, 15px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--dark);
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+  width: clamp(220px, 26vw, 340px);
+  box-shadow: 2px 3px 0 rgba(224,57,123,0.22);
+  transition: background 0.2s, transform 0.18s, box-shadow 0.2s, opacity 0.3s;
+}
+
+.note-pill:hover {
+  background: var(--pink-mid);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 4px 5px 0 rgba(224,57,123,0.35);
+}
+
+.note-pill:active { transform: scale(0.97); }
+
+/* opened state */
+.note-pill.opened {
+  background: var(--pink-mid);
+  opacity: 0.60;
+  border-color: var(--pink-deep);
+  cursor: default;
+}
+
+/* On desktop the pill wrappers are invisible — pills are absolute */
+.pills-mobile-wrap {
+  display: contents;
+}
+
+/* ---- LEFT PILLS ---- */
+.pill-1 { top: 8%;  right: calc(50% + clamp(120px, 16vw, 210px)); transform: rotate(-3deg); }
+.pill-2 { top: 24%; right: calc(50% + clamp(98px,  14vw, 185px)); transform: rotate(1.5deg); }
+.pill-3 { top: 40%; right: calc(50% + clamp(128px, 17vw, 220px)); transform: rotate(-2deg); }
+.pill-4 { top: 57%; right: calc(50% + clamp(90px,  13vw, 170px)); transform: rotate(2.5deg); }
+.pill-5 { top: 73%; right: calc(50% + clamp(112px, 15vw, 200px)); transform: rotate(-1deg); }
+
+/* ---- RIGHT PILLS ---- */
+.pill-6 { top: 8%;  left: calc(50% + clamp(120px, 16vw, 210px)); transform: rotate(3deg); }
+.pill-7 { top: 24%; left: calc(50% + clamp(98px,  14vw, 185px)); transform: rotate(-2deg); }
+.pill-8 { top: 40%; left: calc(50% + clamp(128px, 17vw, 220px)); transform: rotate(2deg); }
+.pill-9 { top: 57%; left: calc(50% + clamp(90px,  13vw, 170px)); transform: rotate(-3deg); }
+.pill-10{ top: 73%; left: calc(50% + clamp(112px, 15vw, 200px)); transform: rotate(1.5deg); }
+
+/* ========================================================
+   NEXT BUTTON — inside the flower card, below the label
+   ======================================================== */
+.next-btn {
+  display: none; /* hidden by default, shown via .visible class */
+  opacity: 0;
+  margin-top: 18px;
+  background: var(--pink-deep);
+  color: var(--white);
+  border: 3px solid var(--dark);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--dark);
+  padding: 12px 32px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s, opacity 0.5s ease;
+}
+
+.next-btn.visible {
+  display: inline-block;
+  opacity: 1;
+}
+
+.next-btn:hover {
+  background: var(--pink-hot);
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 var(--dark);
+}
+
+/* ========================================================
+   MODAL
+   ======================================================== */
+.note-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 10, 22, 0.55);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 20px;
+}
+
+.note-modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.note-modal {
+  background: #fff;
+  border: 4px solid var(--dark);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--dark);
+  padding: 36px 40px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  transform: scale(0.85);
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.note-modal-overlay.open .note-modal { transform: scale(1); }
+
+.note-modal-icon  { font-size: 36px; line-height: 1; }
+
+.note-modal-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--pink-deep);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.note-modal-body {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: var(--dark);
+  line-height: 1.9;
+  margin: 0;
+}
+
+.note-close-btn {
+  font-size: 10px;
+  padding: 10px 28px;
+  margin-top: 6px;
+}
+
+/* ========================================================
+   MOBILE — clean vertical stack: flower → pills above → pills below
+   ======================================================== */
+@media (max-width: 800px) {
+  .flowers-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 60px;
+    gap: 0;
+  }
+
+  /* Reset all absolute positioning */
+  .note-pill {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    font-size: 13.5px;
+    padding: 14px 22px;
+  }
+
+  /* mobile pill wrappers — stacked column, tight gap */
+  .pills-mobile-wrap {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 420px;
+    margin: 12px 0;
+  }
+
+  .flower-card {
+    width: min(92vw, 360px);
+    padding: 28px 24px;
+    order: 1;
+  }
+
+  .pills-mobile-wrap.top-wrap {
+    margin-bottom: 0;
+    order: 2;
+  }
+
+  .pills-mobile-wrap.bot-wrap {
+    margin-top: 0;
+    order: 3;
+  }
+
+  .flower-img {
+    width: clamp(200px, 72vw, 300px);
+  }
+
+  .next-btn {
+    font-size: 9px;
+    padding: 11px 24px;
+    margin-top: 14px;
+  }
+}

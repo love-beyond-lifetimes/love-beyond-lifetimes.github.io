@@ -1,0 +1,195 @@
+/* girlfriend.css */
+
+.gf-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 40px 140px;
+  gap: 36px;
+  box-sizing: border-box;
+}
+
+/* ---- Scene ---- */
+.gf-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: nowrap;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* ---- Cat (mwah.gif) ---- */
+.cat-wrap {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+.cat-gif {
+  width: clamp(280px, 32vw, 440px);
+  height: auto;
+  display: block;
+  animation: catFloat 2.6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 2px rgba(0,0,0,0.08));
+}
+
+@keyframes catFloat {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-14px) rotate(1deg); }
+}
+
+.cat-hearts {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.mini-heart {
+  position: absolute;
+  font-size: clamp(14px, 2.2vw, 22px);
+  animation: floatHeart ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes floatHeart {
+  0%   { transform: translate(0,0) scale(0.5); opacity: 0; }
+  25%  { opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(1.1); opacity: 0; }
+}
+
+/* ---- Speech bubble ---- */
+.speech-bubble {
+  position: relative;
+  background: var(--white);
+  border: 4px solid var(--dark);
+  border-radius: 16px 16px 16px 4px;
+  padding: 30px 42px;
+  box-shadow: 5px 5px 0 var(--dark);
+  flex: 1 1 0;
+  min-width: 340px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transition: opacity 0.8s ease;
+  z-index: 4;
+  box-sizing: border-box;
+}
+
+/* Tail points LEFT toward the cat */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: -22px;
+  bottom: 32px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 22px solid var(--dark);
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  bottom: 34px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 15px solid var(--white);
+  z-index: 2;
+}
+
+.gf-msg {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: clamp(14px, 1.5vw, 19px);
+  color: var(--dark);
+  line-height: 1.9;
+  text-align: center;
+  text-shadow: none;
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.bubble-deco {
+  width: clamp(60px, 9vw, 90px);
+  height: auto;
+  animation: decoBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes decoBounce {
+  0%, 100% { transform: scale(1) rotate(-4deg); }
+  50%       { transform: scale(1.1) rotate(4deg); }
+}
+
+/* ---- Bottom ---- */
+.gf-bottom {
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  transition: opacity 0.8s ease;
+}
+
+/* ---- Tablet ---- */
+@media (min-width: 601px) and (max-width: 900px) {
+  .gf-content {
+    padding: 80px 28px 120px;
+    gap: 28px;
+  }
+  .gf-scene {
+    gap: 28px;
+    max-width: 680px;
+  }
+  .cat-gif { width: clamp(220px, 28vw, 340px); }
+  .speech-bubble {
+    padding: 22px 24px;
+    max-width: 380px;
+  }
+  .gf-msg { font-size: clamp(13px, 1.8vw, 16px); }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 600px) {
+  .gf-content { margin-top: 40px; padding: 40px 16px 100px; }
+  .gf-scene {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .cat-wrap      { order: 2; }
+  .speech-bubble {
+    order: 1;
+    width: 88vw;
+    min-width: unset;
+    max-width: unset;
+    flex: none;
+    padding: 20px 18px;
+    border-radius: 16px 16px 4px 16px;
+  }
+  .speech-bubble::after {
+    left: 50%; bottom: -22px;
+    transform: translateX(-50%);
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 22px solid var(--dark);
+    border-bottom: none;
+  }
+  .speech-bubble::before {
+    left: 50%; bottom: -14px;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 15px solid var(--white);
+    border-bottom: none;
+  }
+  .cat-gif { width: clamp(160px, 48vw, 240px); }
+  .gf-msg  { font-size: clamp(13px, 3.5vw, 16px); white-space: normal; }
+}

@@ -1,0 +1,90 @@
+/* index.css — Landing Page */
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.landing-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.title-box {
+  text-align: center;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.main-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(28px, 6vw, 72px);
+  color: var(--white);
+  text-shadow:
+    4px 4px 0 var(--dark),
+    -2px -2px 0 var(--dark),
+    2px -2px 0 var(--dark),
+    -2px  2px 0 var(--dark),
+    0 0 30px rgba(255,107,157,0.8);
+  line-height: 1.3;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.title-hearts {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.t-heart {
+  font-size: 32px;
+  color: var(--pink-hot);
+  animation: heartPulse 1.4s ease-in-out infinite;
+  text-shadow: 0 0 12px var(--pink-hot);
+}
+
+.t-heart.delay1 { animation-delay: 0.2s; }
+.t-heart.delay2 { animation-delay: 0.4s; }
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.25); }
+}
+
+.press-btn {
+  font-size: clamp(10px, 2vw, 14px);
+  padding: 16px 36px;
+  margin-top: 8px;
+  animation: btnGlow 2s ease-in-out infinite alternate;
+}
+
+.press-blink {
+  font-size: 9px;
+  color: var(--white);
+  margin-top: 16px;
+  opacity: 0.7;
+  animation: blinkText 1.2s step-end infinite;
+}
+
+@keyframes blinkText {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 0; }
+}
+
+/* Floating hearts scattered on screen */
+.floating-hearts {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}

@@ -1,0 +1,108 @@
+/* reasons.css */
+.reasons-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+}
+
+.reasons-panel {
+  width: min(680px, 94vw);
+  background: rgba(255,235,248,0.97);
+}
+
+.reasons-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.pixel-heart {
+  font-size: 28px;
+  color: var(--pink-hot);
+  animation: heartPulse 1.2s ease-in-out infinite;
+  text-shadow: 0 0 10px var(--pink-hot);
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.reasons-title {
+  font-size: clamp(11px, 2vw, 18px);
+  color: var(--pink-deep);
+  text-align: center;
+  text-shadow:
+    2px 2px 0 var(--white),
+    -1px -1px 0 var(--pink-deep);
+  line-height: 1.5;
+}
+
+/* Reason buttons */
+.reasons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reason-btn {
+  width: 100%;
+  padding: 16px 20px;
+  border: 3px solid var(--dark);
+  border-radius: 50px;
+  background: var(--pink-mid);
+  color: var(--white);
+  font-size: clamp(8px, 1.5vw, 12px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 var(--dark);
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.reason-btn:hover:not([disabled]) {
+  background: var(--pink-hot);
+  transform: translate(-2px,-2px);
+  box-shadow: 5px 5px 0 var(--dark);
+}
+
+.reason-btn:active:not([disabled]) {
+  transform: translate(1px,1px);
+  box-shadow: 2px 2px 0 var(--dark);
+}
+
+/* Locked state */
+.reason-btn.locked {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: 3px 3px 0 #999;
+  border-color: #999;
+  text-shadow: none;
+}
+
+/* Done/completed state */
+.reason-btn.done {
+  background: rgba(180,180,180,0.5);
+  color: #999;
+  cursor: not-allowed;
+  border-color: #bbb;
+  box-shadow: 3px 3px 0 #bbb;
+  text-shadow: none;
+}
+
+/* Secret button */
+.secret-btn {
+  background: linear-gradient(135deg, var(--pink-hot), var(--pink-deep));
+  animation: secretGlow 1.5s ease-in-out infinite alternate;
+  border-radius: 50px;
+}
+
+@keyframes secretGlow {
+  from { box-shadow: 3px 3px 0 var(--dark), 0 0 10px rgba(255,107,157,0.4); }
+  to   { box-shadow: 3px 3px 0 var(--dark), 0 0 25px rgba(255,107,157,0.8); }
+}

@@ -1,0 +1,116 @@
+/* rules.css */
+.rules-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+}
+
+.rules-panel {
+  width: min(780px, 94vw);
+  background: rgba(255, 230, 245, 0.97);
+}
+
+.rules-title {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--white);
+  text-shadow:
+    3px 3px 0 var(--dark),
+    -1px -1px 0 var(--dark),
+    1px -1px 0 var(--dark),
+    -1px 1px 0 var(--dark);
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 3px;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.rule-item {
+  padding: 4px 0;
+}
+
+.rule-check-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.rule-check-label input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--dark);
+  background: var(--white);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  margin-top: 2px;
+}
+
+.check-icon {
+  font-size: 16px;
+  color: var(--pink-deep);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.2s ease;
+}
+
+/* When checkbox is checked via JS class */
+.rule-check-label.checked .custom-checkbox {
+  background: var(--pink-light);
+  border-color: var(--pink-deep);
+}
+
+.rule-check-label.checked .check-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rule-text {
+  font-size: clamp(8px, 1.4vw, 12px);
+  color: var(--dark);
+  line-height: 1.8;
+}
+
+/* Agree button */
+.agree-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.agree-btn {
+  font-size: 12px;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: opacity 0.3s;
+}
+
+.agree-btn:not([disabled]) {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.agree-hint {
+  font-size: 8px;
+  color: var(--gray-text);
+  transition: opacity 0.3s;
+}
+
+.agree-hint.hidden {
+  opacity: 0;
+}
