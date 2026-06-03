@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — The Question</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/final-question.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content fq-content fade-in">
+    <div class="fq-panel">
+
+      <p class="pixel fq-name" id="fq-name">so Lynn Margaret Julian...</p>
+
+      <h1 class="pixel fq-question">will you <br> officially be<br>my girlfriend?</h1>
+
+      <!-- Both buttons in one centered row — NO becomes fixed on first hover -->
+      <div class="fq-buttons-static" id="fq-buttons-static">
+        <button class="btn-pixel yes-btn" id="yes-btn" onclick="handleYes()">YES</button>
+        <button class="btn-pixel no-btn"  id="no-btn"
+          onmouseover="runFromCursor()"
+          onfocus="runFromCursor()"
+          ontouchstart="runFromCursor(); return false;">NO</button>
+      </div>
+
+      <p class="fq-hint pixel" id="fq-hint">choose wisely ♡</p>
+
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/final-question.js"></script>
+</body>
+</html>

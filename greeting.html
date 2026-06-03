@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — hi baby ><</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/greeting.css">
+</head>
+<body>
+
+<div class="page-bg"></div>
+<div class="petals-container" id="petals"></div>
+<button id="music-btn" onclick="toggleMusic()">&#9834; ON</button>
+
+<div class="character-area">
+  <img src="assets/gifs/shy.gif" alt="character" class="char-img">
+</div>
+
+<div class="dialogue-wrapper" id="dialogue-wrapper">
+  <div class="bubble-row">
+    <div class="dialogue-bubble" id="dialogue-bubble">
+      <p class="dialogue-text" id="dialogue-text"></p>
+    </div>
+    <div class="next-arrow" id="next-arrow" onclick="nextDialogue()">&#9654;</div>
+  </div>
+  <div class="continue-area" id="continue-area">
+    <button class="btn-pixel" onclick="SFX.nextButton(); goTo('prerules.html')">ENTER NOW</button>
+  </div>
+</div>
+
+<script src="js/global.js"></script>
+<script src="js/greeting.js"></script>
+</body>
+</html>

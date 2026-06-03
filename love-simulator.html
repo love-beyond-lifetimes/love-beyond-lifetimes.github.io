@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Round 02</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/love-simulator.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content sim-content fade-in">
+
+    <h1 class="pixel sim-round">ROUND 02</h1>
+
+    <div class="sim-panel pixel-panel">
+      <p class="pixel sim-label">♥ relationship progress simulator</p>
+      <p class="sim-sub">reach <strong>100 love points</strong> to unlock something important</p>
+
+      <!-- Counter -->
+      <p class="pixel sim-counter" id="sim-counter">love points: 0 / 100</p>
+
+      <!-- Progress bar -->
+      <div class="sim-bar-wrap">
+        <div class="sim-bar-fill" id="sim-bar-fill"></div>
+      </div>
+
+      <!-- Milestone message -->
+      <p class="sim-milestone" id="sim-milestone"></p>
+
+      <!-- Clickable heart -->
+      <div class="sim-heart-wrap" id="sim-heart-wrap">
+        <div class="sim-heart" id="sim-heart" onclick="clickHeart(event)">
+          💖
+        </div>
+        <p class="pixel sim-click-hint">click the heart ♥</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Victory overlay -->
+  <div class="sim-victory" id="sim-victory" style="display:none;">
+    <div class="victory-box pixel-panel">
+      <div class="v-hearts">♥ ♥ ♥</div>
+      <h2 class="pixel v-title">SYSTEM UNLOCKED</h2>
+      <p class="v-sub pixel">emotional access granted ♡</p>
+      <p class="v-msg">I got something special waiting for you. ♡</p>
+      <button class="btn-pixel glow" onclick="SFX.nextButton(); goTo('flowers.html')">
+        FLOWERS FOR YOU ♡
+      </button>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/love-simulator.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Round 01</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/maze.css">
+</head>
+<body>
+
+  <div class="page-bg"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <!-- Trap popup -->
+  <div id="trap-msg">
+    <span class="trap-emoji">💀</span>
+    <span class="trap-line1">GIRL... REALLY?</span>
+    <span class="trap-line2">BACK TO START LOL</span>
+  </div>
+
+  <div class="page-content maze-page">
+
+    <!-- Header -->
+    <div class="maze-header fade-in">
+      <h1 class="pixel maze-round">ROUND 01</h1>
+      <p class="pixel maze-subtitle">LOCATE PLAYER TWO TO REVEAL A SECRET</p>
+    </div>
+
+    <!-- Canvas container -->
+    <div class="canvas-wrap" id="canvas-wrap">
+      <canvas id="maze-canvas"></canvas>
+    </div>
+
+    <!-- Mobile controls -->
+    <div class="mobile-controls" id="mobile-controls">
+      <button class="dpad-btn" id="btn-up"
+        ontouchstart="setDir('up')"    ontouchend="clearDir('up')"
+        onmousedown="setDir('up')"     onmouseup="clearDir('up')">▲</button>
+      <div class="dpad-row">
+        <button class="dpad-btn" id="btn-left"
+          ontouchstart="setDir('left')"  ontouchend="clearDir('left')"
+          onmousedown="setDir('left')"   onmouseup="clearDir('left')">◀</button>
+        <div class="dpad-center">✦</div>
+        <button class="dpad-btn" id="btn-right"
+          ontouchstart="setDir('right')" ontouchend="clearDir('right')"
+          onmousedown="setDir('right')"  onmouseup="clearDir('right')">▶</button>
+      </div>
+      <button class="dpad-btn" id="btn-down"
+        ontouchstart="setDir('down')"  ontouchend="clearDir('down')"
+        onmousedown="setDir('down')"   onmouseup="clearDir('down')">▼</button>
+    </div>
+
+  </div>
+
+  <!-- Victory overlay -->
+  <div class="victory-overlay" id="victory-overlay" style="display:none;">
+    <div class="victory-box pixel-panel">
+      <div class="victory-hearts">♥ ♥ ♥</div>
+      <h2 class="pixel victory-title">YOU FOUND ME.</h2>
+      <p class="victory-msg">Now let me tell you why I love you so much ♡</p>
+      <button class="btn-pixel glow" onclick="SFX.nextButton(); goTo('reasons.html')">
+        UNLOCK REASONS WHY I LOVE YOU
+      </button>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/maze.js"></script>
+</body>
+</html>

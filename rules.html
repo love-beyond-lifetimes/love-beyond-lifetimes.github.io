@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Rules</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/rules.css">
+</head>
+<body>
+
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content rules-content">
+
+    <div class="rules-panel pixel-panel fade-in">
+      <h1 class="pixel rules-title">Rules</h1>
+
+      <div class="rules-list" id="rules-list">
+
+        <div class="rule-item" data-index="0">
+          <label class="rule-check-label">
+            <input type="checkbox" class="rule-cb" onchange="handleCheck(this)">
+            <span class="custom-checkbox"><span class="check-icon">✔</span></span>
+            <span class="rule-text pixel">STAY GORGEOUS (IT'S A PASSIVE SKILL).</span>
+          </label>
+        </div>
+
+        <div class="rule-item" data-index="1">
+          <label class="rule-check-label">
+            <input type="checkbox" class="rule-cb" onchange="handleCheck(this)">
+            <span class="custom-checkbox"><span class="check-icon">✔</span></span>
+            <span class="rule-text pixel">UNLOCK MAXIMUM FUN.</span>
+          </label>
+        </div>
+
+        <div class="rule-item" data-index="2">
+          <label class="rule-check-label">
+            <input type="checkbox" class="rule-cb" onchange="handleCheck(this)">
+            <span class="custom-checkbox"><span class="check-icon">✔</span></span>
+            <span class="rule-text pixel">ALWAYS BE PLAYER ONE.</span>
+          </label>
+        </div>
+
+        <div class="rule-item" data-index="3">
+          <label class="rule-check-label">
+            <input type="checkbox" class="rule-cb" onchange="handleCheck(this)">
+            <span class="custom-checkbox"><span class="check-icon">✔</span></span>
+            <span class="rule-text pixel">ALLOW PLAYER TWO (ME) TO LOVE YOU IN ALL LIFETIMES.</span>
+          </label>
+        </div>
+
+      </div>
+
+      <!-- Agree button — disabled until all checked -->
+      <div class="agree-area">
+        <button class="btn-pixel agree-btn" id="agree-btn" onclick="handleAgree()" disabled>
+          I AGREE
+        </button>
+        <p class="agree-hint pixel" id="agree-hint">check all rules first!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/rules.js"></script>
+</body>
+</html>

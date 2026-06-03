@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Flowers for You</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/flowers.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content flowers-page fade-in">
+
+    <!-- LEFT pills (desktop: absolute) / TOP pills (mobile: stacked above flower) -->
+    <div class="pills-mobile-wrap top-wrap">
+      <button class="note-pill pill-1" onclick="openNote(0)" data-index="0">Thank you for being my favorite coincidence.</button>
+      <button class="note-pill pill-2" onclick="openNote(1)" data-index="1">Thank you for loving me.</button>
+      <button class="note-pill pill-3" onclick="openNote(2)" data-index="2">Thank you for making ordinary days feel special.</button>
+      <button class="note-pill pill-4" onclick="openNote(3)" data-index="3">Thank you for making me smile so much.</button>
+      <button class="note-pill pill-5" onclick="openNote(4)" data-index="4">Thank you for making the world feel beautiful again.</button>
+    </div>
+
+    <!-- Center flower card — next button lives here so it never overlaps pills -->
+    <div class="flower-card">
+      <img src="assets/images/flower.png" alt="flowers" class="flower-img">
+      <p class="flower-label">flowers for you &lt;3</p>
+      <a href="heart-game.html" class="next-btn" id="next-btn">
+        next page ♡
+      </a>
+    </div>
+
+    <!-- RIGHT pills (desktop: absolute) / BOTTOM pills (mobile: stacked below flower) -->
+    <div class="pills-mobile-wrap bot-wrap">
+      <button class="note-pill pill-6" onclick="openNote(5)" data-index="5">Thank you for making me feel at home.</button>
+      <button class="note-pill pill-7" onclick="openNote(6)" data-index="6">Thank you for being you.</button>
+      <button class="note-pill pill-8" onclick="openNote(7)" data-index="7">Thank you for trusting me.</button>
+      <button class="note-pill pill-9" onclick="openNote(8)" data-index="8">Thank you for letting me love you.</button>
+      <button class="note-pill pill-10" onclick="openNote(9)" data-index="9">Thank you for making me believe some people are worth waiting a lifetime for.</button>
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="note-modal-overlay" id="modal-overlay" onclick="closeNote()">
+    <div class="note-modal" onclick="event.stopPropagation()">
+      <div class="note-modal-icon">🌷</div>
+      <h3 class="note-modal-title" id="modal-title"></h3>
+      <p class="note-modal-body" id="modal-body"></p>
+      <button class="btn-pixel note-close-btn" onclick="closeNote()">close ♡</button>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/flowers.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Before We Begin</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/prerules.css">
+</head>
+<body>
+
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content prerules-content fade-in">
+
+    <!-- Character on left -->
+
+    <!-- Main panel -->
+    <div class="pr-panel pixel-panel">
+      <h2 class="pixel pr-title">⚠ NOTICE ⚠</h2>
+      <p class="pr-subtitle">Before continuing, you must accept the</p>
+      <p class="pr-highlight pixel">SACRED RELATIONSHIP RULES.</p>
+      <p class="pr-sub2">This is serious. (Kind of.) (Not really.) (Yes really.)</p>
+
+      <button class="btn-pixel glow pr-btn" onclick="SFX.nextButton(); goTo('rules.html')">
+        ENTER RELATIONSHIP SIMULATION
+      </button>
+    </div>
+
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      spawnPetals(document.getElementById('petals'), 10);
+    });
+  </script>
+</body>
+</html>

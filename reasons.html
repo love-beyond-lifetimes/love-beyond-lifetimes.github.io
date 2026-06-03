@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Reasons</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/reasons.css">
+</head>
+<body>
+
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content reasons-content fade-in">
+
+    <div class="reasons-panel pixel-panel">
+
+      <div class="reasons-header">
+        <span class="pixel-heart">♥</span>
+        <h1 class="pixel reasons-title">REASONS WHY I<br>LOVE YOU</h1>
+        <span class="pixel-heart">♥</span>
+      </div>
+
+      <div class="reasons-list" id="reasons-list">
+
+        <button class="reason-btn pixel" id="reason-0" onclick="openReason(0)">
+          You're so beautiful
+        </button>
+
+        <button class="reason-btn pixel locked" id="reason-1" onclick="openReason(1)" disabled>
+          You make me feel safe
+        </button>
+
+        <button class="reason-btn pixel locked" id="reason-2" onclick="openReason(2)" disabled>
+          You're so precious
+        </button>
+
+        <button class="reason-btn pixel locked" id="reason-3" onclick="openReason(3)" disabled>
+          You are my comfort
+        </button>
+
+        <!-- Secret note button — hidden until all 4 read -->
+        <button class="reason-btn pixel secret-btn" id="reason-secret" onclick="goTo('secret-note.html')" style="display:none;">
+          ✦ You unlocked a secret note! ✦
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/reasons.js"></script>
+</body>
+</html>

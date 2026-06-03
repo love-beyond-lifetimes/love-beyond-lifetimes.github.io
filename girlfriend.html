@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — My Girlfriend ♡</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/girlfriend.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <div class="petals-container" id="petals"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <div class="page-content gf-content">
+
+    <div class="gf-scene fade-in">
+
+      <!-- mwah.gif as the cat character, outside the bubble -->
+      <div class="cat-wrap">
+        <div class="cat-hearts" id="cat-hearts"></div>
+        <img src="assets/gifs/mwah.gif" alt="cat" class="cat-gif">
+      </div>
+
+      <!-- Pixel speech bubble -->
+      <div class="speech-bubble" id="speech-bubble" style="opacity:0;">
+        <p class="gf-msg" id="gf-msg"></p>
+      </div>
+
+    </div>
+
+    <!-- Play again -->
+    <div class="gf-bottom" id="gf-bottom" style="opacity:0;">
+      <button class="btn-pixel glow" onclick="playAgain()">
+        ↺ Play Again
+      </button>
+    </div>
+
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/girlfriend.js"></script>
+</body>
+</html>

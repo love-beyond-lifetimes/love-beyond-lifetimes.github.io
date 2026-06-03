@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes — Round 03</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/heart-game.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <div class="transition-overlay" id="transition-overlay"></div>
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <!-- Header -->
+  <div class="hg-header">
+    <h1 class="pixel hg-round">ROUND 03</h1>
+    <p class="pixel hg-subtitle">TAP THE HEARTS! 67 HITS TO UNLOCK SOMETHING.</p>
+    <div class="hg-counter-wrap">
+      <span class="pixel hg-counter" id="hg-counter">0/67</span>
+    </div>
+  </div>
+
+  <!-- Game area (full screen) -->
+  <div class="hg-area" id="hg-area">
+    <!-- Hearts spawned by JS -->
+  </div>
+
+  <!-- Victory overlay -->
+  <div class="hg-victory" id="hg-victory" style="display:none;">
+    <div class="victory-box pixel-panel">
+      <div class="v-hearts">♥ ♥ ♥</div>
+      <h2 class="pixel v-title">ALL HEARTS COLLECTED!</h2>
+      <p class="v-msg">You did it. Now it's time for the most important part. ♡</p>
+      <button class="btn-pixel glow" onclick="SFX.nextButton(); goTo('love-letter.html')">
+        UNLOCK FINAL LOVE LETTER
+      </button>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/heart-game.js"></script>
+</body>
+</html>

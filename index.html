@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Beyond Lifetimes</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="page-bg"></div>
+
+  <!-- Floating petals layer -->
+  <div class="petals-container" id="petals"></div>
+
+  <!-- Page transition overlay -->
+  <div class="transition-overlay" id="transition-overlay"></div>
+
+  <!-- Music toggle -->
+  <button id="music-btn" onclick="toggleMusic()">♪ ON</button>
+
+  <!-- Hidden music element -->
+  <audio id="bg-audio" loop autoplay>
+    <source src="assets/music/Date.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Main content -->
+  <div class="page-content" id="landing">
+
+    <!-- Floating hearts -->
+    <div class="floating-hearts" id="floating-hearts"></div>
+
+    <!-- Center title block -->
+    <div class="landing-center">
+      <div class="title-box fade-in">
+        <h1 class="main-title pixel" id="title-line1">LOVE BEYOND</h1>
+        <h1 class="main-title pixel" id="title-line2">LIFETIMES</h1>
+        <div class="title-hearts">
+          <span class="t-heart">♥</span>
+          <span class="t-heart delay1">♥</span>
+          <span class="t-heart delay2">♥</span>
+        </div>
+        <button class="btn-pixel press-btn glow" onclick="handleStart()" id="start-btn">
+          PRESS TO START
+        </button>
+        <p class="press-blink pixel" id="press-hint">▼ click to begin ▼</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
